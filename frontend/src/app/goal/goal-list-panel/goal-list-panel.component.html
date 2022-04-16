@@ -1,0 +1,13 @@
+<div class="flex flex-row jumbotron m-0 p-0 flex-wrap justify-center">
+    <h1 class="my-4 w-4/5">Moje Cele</h1>
+    <div *ngFor="let goal of goals | async | slice:0:4" class="w-4/5 h-4/5 m-4"> 
+        <mat-card class="flex justify-center items-center">
+            <div class="m-4 flex justify-between"><span>{{goal.goalType.name}} {{goal.valueToReach}} {{goal.goalType.unit}}</span> 
+                <span class="text-3xl text-green-600">Ukończono: {{((goal.valueProgress * 100) - (goal.valueProgress * 100 % goal.valueToReach)) / goal.valueToReach}}%</span></div>
+            <div class="m-4">Status: {{goal.status}} </div>
+            <div class="m-4 flex justify-between"><span>Osiągnięto: {{goal.valueProgress}}/{{goal.valueToReach}}</span> <button class="btn btn-primary">Edytuj</button></div>
+            <mat-progress-bar mode="determinate" value="{{goal.valueProgress * 100 / goal.valueToReach}}"></mat-progress-bar>
+        </mat-card>
+    </div>
+</div>
+

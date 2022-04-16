@@ -1,0 +1,26 @@
+<div class="flex justify-center">
+  <div class="flex justify-evenly bg-gray-500 w-2/3 rounded-xl items-center">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+    </svg>
+    <div class="flex justify-center w-3/4 flex flex-row inline-flex ">
+      <mat-card *ngFor="let post of posts | async" class="m-2 w-1/4 ">
+        <mat-card-content class="m-2">
+          <p>{{post.description}}</p>
+          <p>Nazwa uzytkownika postujacego</p>
+          <p>{{post.routeDate}}</p>
+          <p>ilosc kilometrow</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd"
+        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+        clip-rule="evenodd" />
+    </svg>
+  </div>
+</div>
