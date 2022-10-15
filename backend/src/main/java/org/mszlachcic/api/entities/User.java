@@ -2,6 +2,7 @@ package org.mszlachcic.api.entities;
 
 import lombok.Data;
 
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -23,6 +24,18 @@ public class User {
     @NotBlank
     @Size(max = 20)
     private String username;
+    @NotBlank
+    @Size(max = 20)
+    private String firstName;
+    @NotBlank
+    @Size(max = 20)
+    private String lastName;
+    @NotBlank
+    @Size(max = 20)
+    private LocalDateTime dateOfBirth;
+    @NotBlank
+    @Size(max = 20)
+    private String countryOfOrigin;
     @NotBlank
     @Size(max = 50)
     @Email

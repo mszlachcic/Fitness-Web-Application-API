@@ -19,6 +19,7 @@
             minlength="3"
             maxlength="20"
             #username="ngModel"
+            placeholder="Nazwa użytkownika"
           />
           <div class="alert-danger" *ngIf="username.errors && f.submitted">
             <div *ngIf="username.errors.required">Nazwa użytkownika jest wymagana</div>
