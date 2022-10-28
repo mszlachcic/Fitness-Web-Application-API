@@ -34,7 +34,7 @@ export class CreateRouteComponent implements OnInit {
   constructor(private routeService: RouteService) { }
 
   ngOnInit(): void {
-    let map = L.map('map').setView([52.191, 19.355], 13);
+    let map = L.map('map').setView([50.674221, 17.932308], 13);
     tiles.addTo(map)
 
     map.on('click', (e) => {

@@ -1,5 +1,6 @@
 package org.mszlachcic.api.payload.request;
 
+import java.time.LocalDateTime;
 import java.util.Set;
 
 import javax.validation.constraints.*;
@@ -13,7 +14,16 @@ public class SignupRequest {
     @Size(max = 50)
     @Email
     private String email;
+    @NotBlank
+    @Size(max = 20)
+    private String firstName;
+    @NotBlank
+    @Size(max = 20)
+    private String lastName;
+    private LocalDateTime dateOfBirth;
 
+    @NotBlank
+    private String countryOfOrigin;
     private Set<String> role;
 
     @NotBlank
@@ -51,4 +61,20 @@ public class SignupRequest {
     public void setRole(Set<String> role) {
         this.role = role;
     }
+
+    public LocalDateTime getDateOfBirth() {return dateOfBirth;}
+
+    public void setDateOfBirth(LocalDateTime dateOfBirth) {this.dateOfBirth = dateOfBirth;}
+
+    public String getFirstName() {return firstName;}
+
+    public void setFirstName(String firstName) {this.firstName = firstName;}
+
+    public String getLastName() {return lastName;}
+
+    public void setLastName(String lastName) {this.lastName = lastName;}
+
+    public String getCountryOfOrigin() {return countryOfOrigin;}
+
+    public void setCountryOfOrigin(String countryOfOrigin) {this.countryOfOrigin = countryOfOrigin;}
 }

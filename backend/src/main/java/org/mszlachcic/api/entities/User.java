@@ -30,8 +30,6 @@ public class User {
     @NotBlank
     @Size(max = 20)
     private String lastName;
-    @NotBlank
-    @Size(max = 20)
     private LocalDateTime dateOfBirth;
     @NotBlank
     @Size(max = 20)
@@ -53,6 +51,16 @@ public class User {
 
     public User(String username, String email, String password) {
         this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
+    public User(String username, String firstName, String lastName, LocalDateTime dateOfBirth, String countryOfOrigin, String email, String password) {
+        this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+        this.countryOfOrigin = countryOfOrigin;
         this.email = email;
         this.password = password;
     }
