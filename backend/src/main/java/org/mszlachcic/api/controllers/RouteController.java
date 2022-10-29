@@ -24,10 +24,6 @@ public class RouteController {
         return routeService.getAllRoutes();
     }
 
-    @GetMapping(value = "/getRoutesByCityName")
-    public List<RouteDto> getRoutesByCityName(@RequestParam String name){
-        return routeService.getRoutesByCityName(name);
-    }
 
     @PostMapping(value = "/createRoute")
     public void createRoute(@RequestBody RouteDtoCreate routeDtoCreate){

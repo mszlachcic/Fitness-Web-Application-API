@@ -1,9 +1,9 @@
 package org.mszlachcic.api.repository;
 
-import org.mszlachcic.api.entities.Country;
+import org.mszlachcic.api.entities.Address;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CountryRepository extends JpaRepository<Country,String> {
+public interface AddressRepository extends JpaRepository<Address,Long> {
 }

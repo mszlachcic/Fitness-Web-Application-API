@@ -11,7 +11,7 @@ public class RouteDtoCreate {
 
     private String name;
     private BigDecimal distance;
-    private CityDto city;
+    private AddressDto address;
     private LocalDateTime date;
     private List<CheckpointDto> checkpointList;
 }

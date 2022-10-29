@@ -10,6 +10,6 @@ public class RouteDto {
 
     private String name;
     private BigDecimal distance;
-    private CityDto city;
+    private AddressDto addressDto;
     private LocalDateTime date;
 }

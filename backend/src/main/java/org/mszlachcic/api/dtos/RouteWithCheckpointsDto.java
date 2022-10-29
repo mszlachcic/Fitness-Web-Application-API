@@ -11,7 +11,7 @@ public class RouteWithCheckpointsDto {
 
     private String name;
     private BigDecimal distance;
-    private CityDto city;
+    private AddressDto addressDto;
     private LocalDateTime date;
     private List<CheckpointDto> checkpointList;
 }

@@ -18,8 +18,8 @@ public class Route {
     private String name;
     private BigDecimal distance;
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "city_id")
-    private City city;
+    @JoinColumn(name = "address_id")
+    private Address address;
     private LocalDateTime date;
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "user_routes",
