@@ -31,5 +31,19 @@ public class WorkoutController {
     public List<GetWorkoutDto> getWorkoutsByUsername(@RequestParam String username){
         return workoutService.getWorkoutsByUsername(username);
     }
+    @GetMapping("/getWorkoutById")
+    public GetWorkoutDto getWorkoutById(@RequestParam Long id){
+        return workoutService.getWorkoutById(id);
+    }
 
+    @GetMapping("/getWourkoutsBetweenDates")
+    public List<WorkoutDto> getWorkoutsBetweenDates(@RequestParam String startDate,
+                                                    @RequestParam String endDate,
+                                                    @RequestParam String username){
+        return workoutService.getWorkoutsBetweenDates(startDate,endDate,username);
+    }
+    @GetMapping("/get50MostRecentWorkoutsOfAllUsers")
+    public List<GetWorkoutDto> get50MostRecentWorkoutsOfAllUsers(){
+        return this.workoutService.get50MostRecentWorkoutsOfAllUsers();
+    }
 }

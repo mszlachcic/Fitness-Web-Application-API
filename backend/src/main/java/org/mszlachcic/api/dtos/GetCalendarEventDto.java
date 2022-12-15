@@ -7,11 +7,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-public class GetWorkoutDto {
+public class GetCalendarEventDto {
     private String title;
     private LocalDateTime start;
-    private Long duration;
-    private ActivityDto activity;
-    private RouteDto route;
-    private UserDto user;
 }

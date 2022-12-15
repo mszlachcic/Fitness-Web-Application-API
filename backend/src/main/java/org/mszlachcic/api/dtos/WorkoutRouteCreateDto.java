@@ -6,6 +6,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class AddressDto {
-    private String address;
+public class WorkoutRouteCreateDto {
+    private String name;
 }

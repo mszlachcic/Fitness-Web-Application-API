@@ -34,4 +34,10 @@ public class RouteController {
     public RouteWithCheckpointsDto getRouteByName(@RequestParam String name){
         return routeService.getRouteByName(name);
     }
+
+    @GetMapping(value = "/getRoutesByCityName")
+    public List<RouteWithCheckpointsDto> getRoutesByCityName(@RequestParam String name){
+        return routeService.getRoutesByCityName(name);
+    }
+
 }

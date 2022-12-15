@@ -1,10 +1,11 @@
 package org.mszlachcic.api.repository;
 
-import org.mszlachcic.api.entities.GoalType;
+import org.mszlachcic.api.entities.Party;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface GoalTypeRepository extends JpaRepository<GoalType,Long> {
-    GoalType findGoalTypeByName(String name);
+public interface PartyRepository extends JpaRepository<Party,Long> {
+    Party findPartyById(Long id);
+
 }

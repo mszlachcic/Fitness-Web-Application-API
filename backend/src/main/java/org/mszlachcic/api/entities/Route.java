@@ -1,6 +1,7 @@
 package org.mszlachcic.api.entities;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -8,7 +9,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 @Table
 public class Route {
 
@@ -28,10 +30,9 @@ public class Route {
     private List<User> userList;
     @OneToMany(mappedBy = "route",cascade=CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Checkpoint> checkpointList;
-
+    @OneToMany(mappedBy = "route")
+    private List<Workout> workouts;
+    @OneToMany(mappedBy = "route")
+    private List<Party> parties;
 }
-//    @ManyToMany(fetch = FetchType.LAZY)
-//    @JoinTable(	name = "user_roles",
-//            joinColumns = @JoinColumn(name = "user_id"),
-//            inverseJoinColumns = @JoinColumn(name = "role_id"))
-//    private Set<Role> roles = new HashSet<>();
+

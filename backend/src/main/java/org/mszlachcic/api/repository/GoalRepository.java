@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface GoalRepository extends JpaRepository <Goal,Long> {
     List<Goal> findAllByUser_Username(String username);
+    List<Goal> findAllByUserId(Long id);
+
 }

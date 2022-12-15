@@ -1,17 +1,19 @@
 package org.mszlachcic.api.dtos;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Data
+@Getter
+@Setter
 public class RouteWithCheckpointsDto {
 
     private String name;
     private BigDecimal distance;
-    private AddressDto addressDto;
+    private AddressDto address;
     private LocalDateTime date;
     private List<CheckpointDto> checkpointList;
 }

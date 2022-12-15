@@ -1,12 +1,15 @@
 package org.mszlachcic.api.entities;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.mszlachcic.api.enums.ERole;
 import lombok.Data;
 
 import javax.persistence.*;
 @Entity
 @Table(name = "roles")
-@Data
+@Getter
+@Setter
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

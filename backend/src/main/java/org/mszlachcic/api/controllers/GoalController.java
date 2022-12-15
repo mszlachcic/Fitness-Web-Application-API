@@ -5,6 +5,7 @@ import org.mszlachcic.api.services.GoalService;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -30,9 +31,9 @@ public class GoalController {
     public void editGoal(@RequestParam BigDecimal newValueProgress, @RequestParam Long id){
         goalService.editGoalById(newValueProgress,id);
     }
+    @GetMapping("/getGoalsByUserId")
+    public List<GoalDto> getGoalsByUserId(@RequestParam Long id) {
+        return goalService.getGoalsByUserId(id);
+    }
 
-//    @GetMapping("/getUserGoals")
-//    public List<Goal> getUserGoals(@RequestParam String username){
-//        return goalService.getUserGoalsByUsername(username);
-//    }
 }

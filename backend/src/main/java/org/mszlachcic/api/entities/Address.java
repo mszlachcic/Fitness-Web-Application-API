@@ -1,13 +1,16 @@
 package org.mszlachcic.api.entities;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table
-@Data
+@Getter
+@Setter
 public class Address {
 
     @Id

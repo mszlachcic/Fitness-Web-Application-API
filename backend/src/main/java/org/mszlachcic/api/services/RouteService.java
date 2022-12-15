@@ -30,7 +30,6 @@ public class RouteService {
         this.checkpointRepository = checkpointRepository;
         this.addressRepository = addressRepository;
     }
-
     public List<RouteDto> getAllRoutes(){
         List<RouteDto>routeList = routeRepository
                 .findAll()
@@ -39,7 +38,6 @@ public class RouteService {
                 .collect(Collectors.toList());
         return routeList;
     }
-
     public void createRoute(RouteDtoCreate routeDtoCreate){
         Route route = modelMapper.map(routeDtoCreate,Route.class);
         List<Checkpoint> checkpointList = route.getCheckpointList();
@@ -51,10 +49,18 @@ public class RouteService {
 
         routeRepository.save(route);
     }
-
     public RouteWithCheckpointsDto getRouteByName(String name){
         Route route = routeRepository.findByName(name);
         RouteWithCheckpointsDto routeDto = modelMapper.map(route,RouteWithCheckpointsDto.class);
         return routeDto;
+    }
+
+    public List<RouteWithCheckpointsDto> getRoutesByCityName(String name){
+        List<Route> routeList = routeRepository.getRoutesByCityName(name);
+
+        return routeList
+                .stream()
+                .map(r -> modelMapper.map(r, RouteWithCheckpointsDto.class))
+                .collect(Collectors.toList());
     }
 }

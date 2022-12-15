@@ -11,11 +11,15 @@ import java.util.List;
 @Table
 @Getter
 @Setter
-public class GoalType {
+public class Activity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
-    @OneToMany(mappedBy = "id")
-    private List<Goal> goalList;
+    private String activityName;
+    @OneToMany(mappedBy = "activity",cascade=CascadeType.ALL)
+    private List<Workout> workouts;
+
+    @OneToMany(mappedBy = "activity",cascade = CascadeType.ALL)
+    private List<Goal> goals;
 }

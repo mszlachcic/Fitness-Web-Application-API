@@ -1,14 +1,18 @@
 package org.mszlachcic.api.entities;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.mszlachcic.api.enums.EGoalStatus;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Entity
 @Table
-@Data
+@Getter
+@Setter
 public class Goal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,7 +21,11 @@ public class Goal {
     private GoalType goalType;
     private BigDecimal valueToReach;
     private BigDecimal valueProgress;
-    private EGoalStatus status;
+    private LocalDateTime start;
+    private Boolean recurring;
     @ManyToOne
     private User user;
+
+    @ManyToOne
+    private Activity activity;
 }

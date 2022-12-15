@@ -1,10 +1,11 @@
 package org.mszlachcic.api.dtos;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class GoalTypeDto {
-    private Long id;
     private String name;
-    private String unit;
 }
